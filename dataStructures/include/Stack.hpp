@@ -10,7 +10,6 @@ class Stack{
 private:
 	Node* head;
 
-//test
 public:
 	void add(int num){
 		Node* temp = new Node();
