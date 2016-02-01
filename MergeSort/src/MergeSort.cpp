@@ -55,19 +55,33 @@ list<int> mergeSort(list<int> values){
 }
 
 int main() {
-	cout << "Starting merge sort...." << endl;
+	cout << "Starting merge sort on list: [";
 	list<int> array;
 	array.push_back(7);
 	array.push_back(1);
 	array.push_back(2);
 	array.push_back(3);
 	array.push_back(0);
-	array = mergeSort(array);
 	list<int>::iterator it = array.begin();
 	for(int i = 0; i < array.size(); i++){
-		cout<<*it<<endl;
-		++it;
+		if(i < array.size()-1){
+			cout<<*it<<",";
+			++it;
+		}
+		else{cout<<*it;}
 	}
+	cout<<"]"<<endl;
+	array = mergeSort(array);
+	cout<<"Sorted list: [";
+	it = array.begin();
+	for(int i = 0; i < array.size(); i++){
+		if(i < array.size()-1){
+			cout<<*it<<",";
+			++it;
+		}
+		else{cout<<*it;}
+	}
+	cout<<"]"<<endl;
 	return 0;
 }
 
